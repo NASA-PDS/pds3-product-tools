@@ -20,8 +20,27 @@ following commands:
 % mvn package
 
 # Release
-Here is the procedure for releasing the software both in Github and pushing the JARs to the public Maven Central repo:
+Here is the procedure for releasing the software both in Github and pushing the JARs to the public Maven Central repo.
 
+## Pre-Requisites
+* Make sure you have your GPG Key created and sent to server.
+* Make sure you have your .settings configured correctly for GPG:
+```
+<profiles>
+  <profile>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <properties>
+      <gpg.executable>gpg</gpg.executable>
+      <gpg.keyname>KEY_NAME</gpg.keyname>
+      <gpg.passphrase>KEY_PASSPHRASE</gpg.passphrase>
+    </properties>
+  </profile>
+</profiles>
+```
+
+## Procedure
 1. Checkout the dev branch.
 
 2. Version the software:
@@ -41,4 +60,17 @@ mvn clean deploy -P release
 6. Update version to next snapshot:
 ```
 mvn versions:set -DnewVersion=1.3.0-SNAPSHOT
+```
+
+# JAR Dependency Reference
+
+This package has been deployed to Maven Central and can be referenced in your POM as:
+
+```
+    <dependency>
+      <groupId>gov.nasa.pds</groupId>
+      <artifactId>pds3-product-tools</artifactId>
+      <version>4.0.1</version>
+      <scope>test</scope>
+    </dependency>
 ```
