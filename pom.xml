@@ -32,36 +32,55 @@
   POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>gov.nasa.pds</groupId>
   <artifactId>pds3-product-tools</artifactId>
-  <version>4.0.0</version>
+  <version>4.0.1</version>
   <packaging>jar</packaging>
 
-  <name>Product Tools Library</name>
+  <name>${project.groupId}:${project.artifactId}</name>
   <description>
-    The Product Tools Library project supports design/generation, validation and submission of archival products to the PDS. This project consists of a library of software classes to support the development of tools to perform these functions and is designed to be utilized by developers from the Engineering Node, Discipline Nodes and the PDS community.
+    The PDS3 Product Tools Library project supports design/generation, validation and submission of archival products to the PDS. This project consists of a library of software classes to support the development of tools to perform these functions and is designed to be utilized by developers from the Engineering Node, Discipline Nodes and the PDS community.
   </description>
   <url>https://github.com/NASA-PDS-Incubator/pds3-product-tools</url>
 
   <licenses>
     <license>
-      <name>Apache License, Version 2.0</name>
-      <url>https://github.com/NASA-PDS-Incubator/pds3-product-tools/blob/master/LICENSE.txt</url>
-      <distribution>repo</distribution>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
 
   <developers>
+    <developer>
+      <name>Jordan Padams</name>
+      <id>jpadams</id>
+      <email>Jordan.H.Padams@jpl.nasa.gov</email>
+      <organization>NASA Jet Propulsion Laboratory</organization>
+      <roles>
+        <role>PDS Engineering Node Manager</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Galen Hollins</name>
+      <id>ghollins</id>
+      <email>Galen.Hollins@jpl.nasa.gov</email>
+      <organization>NASA Jet Propulsion Laboratory</organization>
+      <roles>
+        <role>PDS Engineering Node Development Lead</role>
+      </roles>
+    </developer>
     <developer>
       <name>Sean Hardman</name>
       <id>shardman</id>
       <email>Sean.Hardman@jpl.nasa.gov</email>
       <organization>NASA Jet Propulsion Laboratory</organization>
       <roles>
-        <role>Development Lead</role>
+        <role>Former Development Lead</role>
       </roles>
     </developer>
     <developer>
@@ -70,7 +89,7 @@
       <email>Michael.Cayanan@jpl.nasa.gov</email>
       <organization>NASA Jet Propulsion Laboratory</organization>
       <roles>
-        <role>Developer</role>
+        <role>Former Developer</role>
       </roles>
     </developer>
     <developer>
@@ -173,7 +192,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-	<version>3.0.0</version>
+	    <version>3.0.0</version>
         <configuration>
           <archive>
             <manifest>
@@ -241,20 +260,6 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>jar-no-fork</goal>
-              <goal>test-jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
           <execution>
@@ -281,42 +286,6 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-		<configuration>
-          <source>1.8</source>
-	  	  <failOnError>false</failOnError>
-        </configuration>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.5</version>
-        <executions>
-            <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                    <goal>sign</goal>
-                </goals>
-                <configuration>
-                    <gpgArguments>
-                        <arg>--pinentry-mode</arg>
-                        <arg>loopback</arg>
-                    </gpgArguments>
-                </configuration>
-            </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
         <version>1.6.7</version>
@@ -331,9 +300,70 @@
   </build>
 
   <scm>
-    <url>https://github.com/NASA-PDS-Incubator/pds3-product-tools.git</url>
+    <url>https://github.com/NASA-PDS-Incubator/pds3-product-tools/tree/master</url>
     <connection>scm:git:git://github.com/NASA-PDS-Incubator/pds3-product-tools.git</connection>
+    <developerConnection>scm:git:ssh://github.com:NASA-PDS-Incubator/pds3-product-tools.git</developerConnection>
   </scm>
+  
+  <profiles>
+    <profile> 
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                  <goal>test-jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+    		<configuration>
+              <source>1.8</source>
+    	  	  <failOnError>false</failOnError>
+            </configuration>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.5</version>
+            <executions>
+                <execution>
+                    <id>sign-artifacts</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>sign</goal>
+                    </goals>
+                    <configuration>
+                        <gpgArguments>
+                            <arg>--pinentry-mode</arg>
+                            <arg>loopback</arg>
+                        </gpgArguments>
+                    </configuration>
+                </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
   <dependencies>
     <dependency>
