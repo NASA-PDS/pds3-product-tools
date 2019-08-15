@@ -1,7 +1,0 @@
-PDS_VERSION_ID                = PDS3
-
-OBJECT                        = TEXT
-  PUBLICATION_DATE            = 2006-12-31
-  ^NOTE                       = "NOTE-1.TXT"
-END_OBJECT                    = TEXT
-END

@@ -1,7 +1,0 @@
-CCSD3ZF0000l0000000lNJPL3IF0PDSX0000000l
-PDS_VERSION_ID                  = PDS3
-LABEL_REVISION_NOTE             = "M.K. GORDON, 2003-11-04"
-RECORD_TYPE                     = FIXED_LENGTH
-RECORD_BYTES                    = 65
-FILE_RECORDS                    = 14
-END

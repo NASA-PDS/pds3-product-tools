@@ -1,8 +1,0 @@
-PDS_VERSION_ID                     = PDS3
-
-ANUMERIC = "X"
-ANUMERIC = "XXXXX"
-ANUMERIC = 777
-ANUMERIC = "a-a"
-ANUMERIC = "a9Z"
-END

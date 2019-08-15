@@ -1,8 +1,0 @@
-PDS_VERSION_ID                     = PDS3
-
-^STRUCTURE                       = "circular2.lbl"
-/* make sure it doesn't complain about two includes of the same file, useful
-in multiple format file includes */
-^STRUCTURE                       = "valid.lbl"
-^STRUCTURE                       = "valid.lbl"
-END

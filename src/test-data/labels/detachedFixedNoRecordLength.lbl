@@ -1,4 +1,0 @@
-PDS_VERSION_ID = PDS3                                                         
-RECORD_TYPE = FIXED_LENGTH                                                    
-DUB = 5.0                                                                      
-END                                                                           

@@ -1,2 +1,0 @@
-PDS3 Product Tools Library
-Copyright 2019 California Institute of Technology

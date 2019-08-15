@@ -1,7 +1,0 @@
-PDS_VERSION_ID          = PDS3
-RECORD_TYPE             = STREAM
-
-FAKE_DEF = 10
-DECLINATION = -14.2756
-
-END

@@ -1,8 +1,0 @@
-PDS_VERSION_ID          = PDS3
-TARGET_NAME     "MARS"
-DUB = 10 /* filler so doesn't look ahead to next line */
-MISSION_NAME     MER
-DUB = 10 /* filler so doesn't look ahead to next line */
-^SPICE_KERNEL                  "LEAPSECS.KER"
-DUB = 10 /* filler so doesn't look ahead to next line */
-END

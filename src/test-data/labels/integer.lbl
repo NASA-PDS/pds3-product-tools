@@ -1,9 +1,0 @@
-PDS_VERSION_ID                     = PDS3
-
-AXES = "should be integer not text"
-AXES = 0
-AXES = 7
-AXES = +.2e3
-AXES = 3
-AXES = +3
-END

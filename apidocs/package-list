@@ -1,0 +1,16 @@
+gov.nasa.arc.pds.tools.container
+gov.nasa.arc.pds.tools.util
+gov.nasa.pds.tools
+gov.nasa.pds.tools.constants
+gov.nasa.pds.tools.containers
+gov.nasa.pds.tools.dict
+gov.nasa.pds.tools.dict.parser
+gov.nasa.pds.tools.dict.type
+gov.nasa.pds.tools.dict.validate
+gov.nasa.pds.tools.label
+gov.nasa.pds.tools.label.antlr
+gov.nasa.pds.tools.label.parser
+gov.nasa.pds.tools.label.validate
+gov.nasa.pds.tools.object.io
+gov.nasa.pds.tools.object.validate
+gov.nasa.pds.tools.util

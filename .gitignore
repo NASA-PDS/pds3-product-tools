@@ -34,6 +34,8 @@
 *.xpr
 *.swp
 /bin/
+.*.swp
+*.sublime-*
 
 # Java stuff
 *.javac
