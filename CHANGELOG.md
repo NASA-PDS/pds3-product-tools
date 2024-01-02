@@ -1,9 +1,5 @@
 # Changelog
 
-## [v4.4.0-SNAPSHOT](https://github.com/NASA-PDS/pds3-product-tools/tree/v4.4.0-SNAPSHOT) (2023-12-19)
-
-[Full Changelog](https://github.com/NASA-PDS/pds3-product-tools/compare/v4.3.0...v4.4.0-SNAPSHOT)
-
 ## [v4.3.0](https://github.com/NASA-PDS/pds3-product-tools/tree/v4.3.0) (2023-09-14)
 
 [Full Changelog](https://github.com/NASA-PDS/pds3-product-tools/compare/v4.1.0...v4.3.0)
